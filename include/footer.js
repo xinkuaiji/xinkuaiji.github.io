@@ -1,0 +1,5 @@
+document.write("<a href='http://www.miitbeian.gov.cn/publish/query/indexFirst.action'>渝ICP备15001531号-1</a>")
+document.write("<img src='./images/beian.png' style='float:center;'/>")
+document.write("<a href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=50011702500181'>渝公网安备 50011702500181号</a>")
+document.write("<hr>")
+document.write("Copy Right 2018 By xinkuaiji.cn")

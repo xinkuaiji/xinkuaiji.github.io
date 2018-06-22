@@ -1,0 +1,8 @@
+document.write(" <ul>")
+document.write("<li><a href='./index.html' >网站首页 </a> </li>")
+document.write("<li><a href='comacc.html'>企业会计实务 </a></li>")
+document.write("<li><a href='eduacc.html'>学校会计实务 </a></li>")
+document.write(" <li><a href='partybuild.html'>基层党的建设</a></li>")
+document.write("<li><a href='./blog'>博客</a></li>")
+document.write("<li><a href='https://github.com/xinkuaiji/xinkuaiji.github.io' target='_blank'>网站源码</a></li>")
+document.write("</ul>")
