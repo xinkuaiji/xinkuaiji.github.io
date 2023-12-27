@@ -1,4 +1,5 @@
 ﻿document.write(" <ul>")
-document.write("<li><a href='http://www.xinkuaiji.cn/blog/wp-login.php' target='_blank'><img border='0' src='./images/Connect_logo_3.png' /></a> </li>")
-document.write("<li><a href='https://vpn.12371.gov.cn' target='_blank'>12371党建平台</a></li>")
+document.write("<li><a href='https://xinkuaiji.github.io/it' target='_blank'><img border='0' src='./images/Connect_logo_3.png' /></a> </li>")
+document.write("<li><a href="http://10.144.192.9/makecode-microbit-setup-win64.exe"  target="_blank">学校内网下载MakeCode</a></li>")
+document.write("<li><a href="https://makecode.trafficmanager.cn/ghdl/2924dd3870b2530499eb3453c43da3c5/makecode-microbit-setup-win64.exe"  target="_blank">外网官网下载MakeCode</a></li>")
 document.write("</ul>")
