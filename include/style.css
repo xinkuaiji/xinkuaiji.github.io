@@ -8,7 +8,7 @@ body{   /*设置全局页面属性*/
 }
 
 header{ /*设置顶端横幅*/
-    background: url(../images/banner.jpg) no-repeat #85D0ED;
+    background: url(../images/banner.png) no-repeat #85D0ED;
     width: 902px;
     height: 153px;
     padding-top: 0px;
