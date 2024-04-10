@@ -1,0 +1,6 @@
+document.write("<a href='./'>网站首页</a>")
+document.write("<a href='./it.html'>信息科技</a>")
+document.write("<a href='./acs.html'>课后服务</a>")
+document.write("<a href='./aow.html'>作品展示</a>")
+document.write("<a href='./id.html'>教学设计</a>")
+document.write(" <a href='https://github.com/xinkuaiji/xinkuaiji.github.io' target='_blank' style='float:right'>网站源码</a>")

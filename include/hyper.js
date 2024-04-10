@@ -1,0 +1,7 @@
+document.write("<h3>外网资源：</h3>")
+document.write("<ul>")
+document.write("<li><a href='https://makecode.trafficmanager.cn/ghdl/2924dd3870b2530499eb3453c43da3c5/makecode-microbit-setup-win64.exe' target='_blank'>下载MakeCode</a></li>")
+document.write("<li><a href='https://www.zybuluo.com/mdeditor'  target='_blank'>在线画流程图</a></li>")
+document.write("<li><a href='https://res.cqup.com.cn/resource/resource/?category=3631'  target='_blank'>下载MlBlock</a></li>")
+document.write("<li><a href='https://xinkuaiji.github.io/it/%E6%8C%87%E6%B3%95%E7%BB%83%E4%B9%A0.exe' target='_blank'>指法练习.exe</a></li>")
+document.write("</ul>")
