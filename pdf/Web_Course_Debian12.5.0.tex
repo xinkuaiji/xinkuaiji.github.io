@@ -1,0 +1,342 @@
+% TeXShop要选择XeLaTeX才能编译中文{ctexart}
+\documentclass[UTF8,a4paper,12pt]{ctexbook} %中文支持,书籍，多个\chapter{}章节命令
+%将TexShop中的“偏好设置”-“编码”，将其设置为“Unicode(UTF-8)”
+%使用TexShop编译的时候要用“XeLatex”
+%每段开头空两格，不用\\而是编辑时空1行，即可
+\usepackage{amsmath} %数学公式宏包
+%在行文中，使用$...$插入行内公式，使用\[...\]插入行间公式
+% 如果需要对行间公式进行编号，可以使用equation环境：\begin{equaion}...\end{equation}
+%网上有：在线LaTeX公式编辑器，方便直观（请百度）
+%网上有：在线表格生成器，如：Creat LaTeX tables online（请百度），直观生成表格后再复制LaTeX代码
+\usepackage{graphicx} %插入图片宏包
+%插入图片方法(将图片宽度缩放至页面宽度的百分之八十)：\includegraphics{width = .8 \textwidth}{a.jpg}
+\usepackage{pythonhighlight}  %使用Python代码
+% 使用方法，将代码录入到:\begin{python}...\end{python}
+%缺点，文字太多一行显示不完则自动换行，无进度条，不美观。
+\usepackage[colorlinks,linkcolor=red]{hyperref} %使用超链接
+%使用方法：\url{http://www.baidu.com} 或者：
+% \href{http://www.baidu.com}{BaiDu}
+% 抄录命令  \verb |/var/www/html|
+\usepackage{listings}  %使用bash
+\lstset{               %设置{listings}
+ language=bash,                    %设置显示python，也可替换成C++，bash
+ frame=single,                       % 设置有边框
+% backgroundcolor=\color{black},      % choose the background color
+ commentstyle=\color{blue},          % 设置注释颜色
+ keywordstyle=\color{blue},          % 设置keyword颜色
+ breaklines = true,                  % 代码过长则换行
+ showspaces = false,                 % 不显示空格
+ showstringspaces=false,             %不显示中间的空格
+ escapeinside=``,%逃逸字符(1左面的键)，用于显示中文例如在代码中`中文...`
+ basicstyle=\ttfamily
+}
+% 使用方法：\begin{lstlisting}[language={Python}]...python code...\end{lstlisting}
+      %行内代码：\verb|bash|
+% 缺点：同样存在文字太多一行显示不完则自动换行，无进度条，不美观；且没有彩色显示。
+\usepackage{enumerate}
+% 黑点无序列表 \begin{itemize} 有序列表 \begin{enumerate} 列表内容用item
+% 有序列表 \begin{enumerate}[(1)] item 有序列表 \end{enumerate}
+\usepackage{multicol} %用于实现同一页中不同的分栏
+% 分两栏显示 \begin{multicols}{2}...\end{multicols} \columnseprule=1pt %实现插入分隔线
+\title{基于Debian12.5.0搭建Web服务器\\
+       （ThinkPad笔记本）}
+\author{编辑：唐宏}
+\date{\today}
+\begin{document}
+\maketitle
+%\newpage
+\setcounter{tocdepth}{1} %设置目录显示层级
+\tableofcontents
+%\newpage
+%ctexart中定义了五个控制序列来调整行文组织结构，他们分别是：
+%\section{}
+%\subsection()
+%\subsubsection()
+%\paragraph()
+%\subparagraph{}
+\chapter{安装Debian12.5.0系统}
+DebianGNU／Linux(简称Debian)是目前世界最大的非商业性Linux发行版之一，是由世界范围1000多名计算机业余爱好者和专业人员在业余时间制作。
+
+
+安装服务器时选中apache和ssh服务，因为仅让服务器连接电源和网线，其他外设就省了。
+\section{基本操作步骤}
+\begin{itemize}
+\item 启动服务器电脑
+\begin{lstlisting}[language={bash}]
+# 用户名：
+ubuntu
+# 密码：
+toor
+# 在输入密码时，电脑上不会显示
+\end{lstlisting}
+\item 使用结束，关闭
+\begin{lstlisting}[language={bash}]
+# 关闭电脑，用root用户
+/sbin/shutdown -h now 
+\end{lstlisting}
+\end{itemize}
+
+\section{自定义IP}
+\subsection{设置静态IP}
+学校教育内网，linux服务器无法自动获取IP地址，故先在windows系统中通过ipconfig命令查看局域网内IP，再根据查询结果更改ubuntu服务器静态IP地址。更改结果如下：
+\begin{lstlisting}[language={bash}]
+# 查看IP
+ip addr show
+# 查看网卡名称
+ip a
+# sudo vi /etc/network/interfaces
+auto enp0s25
+iface enp0s25 inet static
+address 192.168.1.10
+netmask 255.255.255.0
+gateway 192.168.1.1
+dns-nameservers 114.114.114.114,8.8.8.8
+# 应用配置
+/etc/init.d/networking restart
+\end{lstlisting}
+
+
+校园内网设置静态IP后也无法连接互联网。
+\subsection{设置无线网络}
+\begin{lstlisting}[language={bash}]
+# sudo vi /etc/network/interfaces
+allow-hotplug wls3
+iface wls3 inet dhcp
+	wpa-ssid Redmi
+	wpa-psk 88888888
+\end{lstlisting}
+
+
+网络正常后在局域网内通过Putty软件连接服务器操作
+\subsection{ssh远程控制}
+\begin{lstlisting}[language={bash}]
+# 连接ssh主机
+ssh -p 10114 ubuntu@255v99i723.oicp.vip
+# 上传文件
+scp -P 10114 ./test.tar.gz ubuntu@255v99i723.oicp.vip:/home/ubuntu
+\end{lstlisting}
+
+
+\section{安装网络共享服务}
+\subsection{安装Apache2}
+Apache HTTP Server（简称Apache）是Apache软件基金会的一个开放源码的网页服务器，Apache(音译为阿帕奇)是世界使用排名第一的Web服务器软件。它可以运行在几乎所有广泛使用的计算机平台上，由于其跨平台和安全性被广泛使用，是最流行的Web服务器端软件之一。它快速、可靠并且可通过简单的API扩充，将Perl/Python等解释器编译到服务器中。
+
+
+在安装系统时已默认安装。
+\begin{lstlisting}[language={bash}]
+# 更新包列表
+sudo apt update
+# 安装apache2
+sudo apt install apache2
+# 启动Apache服务
+sudo systemctl start apache2
+\end{lstlisting}
+
+
+在Ubuntu中，Apache2默认解析目录是 \verb |/var/www/html|，要更改默认解析目录，需要编辑 \verb |/etc/apache2/sites-available/000-default.conf|配置文件。
+\begin{lstlisting}[language={bash}]
+# 注释掉 DocumentRoot /var/www/html
+DocumentRoot /home/ubuntu/html
+\end{lstlisting}
+
+
+编辑 \verb|/etc/apache2/apache2.conf| 文件。修改默认路径 \verb|/var/www/html|为新设置的路径。
+\begin{lstlisting}[language={bash}]
+<directory /home/ubuntu/html
+  Options Indexes FollowSymLinks
+  AllowOverride None
+  Require all granted
+</Directory>
+\end{lstlisting}
+
+
+设置更改后目录的可访问权限。-R是递归设置。
+\begin{lstlisting}[language={bash}]
+sudo chmod 777 -R /home
+sudo systemctl restart apache2
+\end{lstlisting}
+\subsection{安装vsftpd}
+vsftpd 是“very secure FTP daemon”的缩写，安全性是它的一个最大的特点。vsftpd 是一个 UNIX 类操作系统上运行的服务器的名字，它可以运行在诸如 Linux、BSD、Solaris、 HP-UNIX等系统上面，是一个完全免费的、开放源代码的ftp服务器软件，支持很多其他的 FTP 服务器所不支持的特征。比如：非常高的安全性需求、带宽限制、良好的可伸缩性、可创建虚拟用户、支持IPv6、速率高等。
+\begin{lstlisting}[language={bash}]
+# 更新包列表
+sudo apt update
+# 安装apache2
+sudo apt install vsftpd
+# 启动Apache服务
+sudo systemctl start vsftpd
+\end{lstlisting}
+
+
+安装好的vsftpd服务器仅只读，要让其可写要修改配置文件。
+\begin{lstlisting}[language={bash}]
+# sudo vim /etc/vsftpd.conf
+write_enable=YES
+# 只需去掉语句前的注释符号
+\end{lstlisting}
+
+\subsection{安装花生壳软件}
+无需依赖公网IP、无需配置路由器，花生壳支持在客户端上添加端口映射，快速将内网服务发布到外网。
+\begin{lstlisting}[language={bash}]
+wget "https://dl.oray.com/hsk/linux/phddns_5.3.0_i386.deb" -O phddns_5.3.0_i386.deb
+apt install ./phddns_5.3.0_amd64.deb
+\end{lstlisting}
+
+
+查询状态并绑定花生壳软件。花生壳内网穿透通过云服务器快速与内网服务器建立连接，同时把内网端口映射到云端，实现各类局域网应用基于域名的互联网访问。
+\begin{lstlisting}[language={bash}]
+# 查看状态
+/bin/phddns status
+# 绑定账号
+# SN:orayfae6c250f6fb
+# Default Password:amdin
+# 网站 http://b.oray.com
+\end{lstlisting}
+
+\section{文件备份与恢复}
+挂载ntfs格式U盘，用于平时查杀U盘病毒，用于备份网站文件等。
+\begin{lstlisting}[language={bash}]
+# 安装ntfs-3
+apt install ntfs-3g
+# 查看U盘，结果为/dev/sdb4
+/sbin/fdisk -l
+# 挂载
+/bin/mount -t ntfs-3g /dev/sdb4 /mnt
+# 卸载
+/bin/umoun /dev/sdb4
+\end{lstlisting}
+
+
+\subsection{wordpress文件备份与恢复}
+备份服务器中的wordpress文件夹
+\begin{lstlisting}[language={bash}]
+#压缩(备份)文件
+sudo tar czvf wordpress.tar.gz ./wordpress/
+#解压（还原）地图文件
+tar xzvf wordpress.tar.gz
+\end{lstlisting}
+
+\chapter{安装PHP软件}
+想搭建wordpress平台，Veno File Manager VFM网盘平台，都需要php支持。
+\section{默认安装php8.2}
+默认为8.2,不支持veno File Manager3.4.8上传文件
+\begin{lstlisting}[language={bash}]
+# 安装
+apt install php
+apt install php-mysql
+# 查看版本
+php -v
+\end{lstlisting}
+可以不默认安装，而直接安装php7.4版本。
+
+\section{多版本php安装}
+添加三方源。
+\begin{lstlisting}[language={bash}]
+apt install software-properties-common ca-certificates lsb-release apt-transport-https
+sudo sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
+wget -qO - https://packages.sury.org/php/apt.gpg | apt-key add -
+\end{lstlisting}
+
+
+安装其他版本php
+\begin{lstlisting}[language={bash}]
+apt update
+# 安装php7.4
+apt install php5.6
+apt install php7.4
+# 安装mysql支持
+apt install php7.4-mysql
+# 版本切换， 根据提示选择7.4版本
+update-alternatives --config php
+\end{lstlisting}
+
+选择7.4版本后，通过\verb|php -v|测出是7.4，但通过info.php测试还是8.2版本，这要更换apache的配置文件。如果直接安装php7.4版本，此步可省略。
+\begin{lstlisting}[language={bash}]
+# vi /etc/apache2/mods-enabled/php8.2.load
+LoadModule php7_module /usr/lib/apache2/modules/libphp7.4.so
+\end{lstlisting}
+
+
+选择php7.4后，就可以安装vfm网盘系统了。只需要上传vfm文件夹，并把uploads文件夹设置权限为777。
+
+
+\chapter{安装MariaDB服务器}
+MariaDB数据库管理系统是MySQL的一个分支，主要由开源社区在维护，采用GPL授权许可 MariaDB的目的是完全兼容MySQL，包括API和命令行，使之能轻松成为MySQL的代替品。MariaDB由MySQL的创始人Michael Widenius主导开发，MariaDB名称来自Michael Widenius的女儿Maria的名字。
+
+
+安装wordpress需要MySql，debian12.5.0默认无MySql版本。
+
+\section{安装MariaDB}
+\begin{lstlisting}[language={bash}]
+# 安装MariaDB
+apt install mariadb-server
+# 查看版本用mysql -v或者:
+mariadb -v
+# 进入数据库用mysql或者:
+mariadb
+# 退出数据库用exit;或者：
+quit;
+\end{lstlisting}
+
+
+\section{MySql基本操作}
+
+
+为后期安装博客系统，新建wordpressuser用户、新建wordpress数据库并设置数据库权限。
+\begin{lstlisting}[language={bash}]
+# 查看数据库
+show databases;
+# 选择数据库
+use mysql;
+# 查看表
+show tables;
+# 查看表内数据
+select name,host from user;
+# 添加用户
+CREATE USER 'wordpressuser'@'localhost' IDENTIFIED BY '123456';
+# 新建数据库
+CREATE DATABASE wordpress;
+# 赋予用户所有权限
+GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpressuser'@'localhost';
+# 刷新权限使变更生效
+FLUSH PRIVILEGES;
+# 登陆wordpressuser用户
+mysql -u wordpressuser -p
+# 输入密码123456即登陆成功
+\end{lstlisting}
+
+
+现在可以安装wordpress博客系统了，要将wp-admin设置权限为777。
+
+\section{MySql备份与恢复}
+MySQLdump是MySQL 自带的逻辑备份工具。它的备份原理是通过协议连接到MySQL数据库，将需要备份的数据查询出来，然后把查询出的数据转换成对应的insert语句，当我们需要还原这些数据时，只要执行这些insert语句，即可将对应的数据还原。
+
+
+MySQLdump可以用来做完全备份和部分备份，支持InnoDB存储引擎的热备功能，以及MyISAM存储引擎的温备功能。让我们一起来看看MySQL怎么备份吧。
+
+
+备份wordpress数据库。
+\begin{lstlisting}[language={bash}]
+# 备份wordpress数据库，返回到shell窗口
+sudo mysqldump -u wordpressuser -p 123456 -P 3306 wordpress > wp.sql
+# 简化备份，输入密码
+mysqldump -u wordpressuser -p wordpress > wp.sql
+# 还原wordpress数据库。
+mysql -u wordpressuser -p wordpress < wp.sql
+\end{lstlisting}
+
+
+\chapter{安装Docker}
+Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows操作系统的机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。 
+
+
+想通过docker搭建小皮面板，再通过docker搭建LAMP服务器，实现同一台物理机中有两个虚拟网站，小皮面板搭建的wordpress能通过手机APP访问，便于手机访问，便于备份，便于移植。
+
+
+基于debian12.5.0安装Docker，也在kali系统中成功安装docker,方法类似但并不完全一样，请自行百度。安装困难，要先在虚拟机中测试成功后再实施。
+
+
+\begin{lstlisting}[language={bash}]
+apt install wordpress
+\end{lstlisting}
+
+\end{document}
