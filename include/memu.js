@@ -1,5 +1,5 @@
 document.write("<a href='https://xinkuaiji.github.io/'>网站首页</a>")
-document.write("<a href='http://25599e7l23.zicp.vip/it.php'>信息科技</a>")
+document.write("<a href='http://360fbb1a.nat123.fun/it.php'>信息科技</a>")
 document.write("<a href='https://xinkuaiji.github.io/acs.html'>课后服务</a>")
 document.write("<a href='https://xinkuaiji.github.io/pc.html'>编程竞赛</a>")
 document.write("<a href='https://xinkuaiji.github.io/aow.html'>作品展示</a>")
