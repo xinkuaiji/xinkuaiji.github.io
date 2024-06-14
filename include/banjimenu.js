@@ -1,1 +1,8 @@
-
+document.write("<li><a href='#home'>三（1）班</a></li>")
+document.write("<li><a href='#home'>三（2）班</a></li>")
+document.write("<li><a href='#home'>四（1）班</a></li>")
+document.write("<li><a href='#home'>四（2）班</a></li>")
+document.write("<li><a href='#home'>五（1）班</a></li>")
+document.write("<li><a href='#home'>五（2）班</a></li>")
+document.write("<li><a href='#home'>六（1）班</a></li>")
+document.write("<li><a href='#home'>六（2）班</a></li>")
