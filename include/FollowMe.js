@@ -3,4 +3,4 @@ document.write("<p>邮箱：<a href='mailto:183328415@qq.com'>183328415@qq.com</
 document.write("<p>电话：18983169358</p>")
 document.write("<p><a href='http://25599e7l23.zicp.vip/wordpress/' target='_blank' >My博客</a></p>")
 document.write("<p><a href='http://25599e7l23.zicp.vip/nextcloud/' target='_blank' >NextCloud</a></p>")
-document.write("<div class='fakeimg' style='height:20px;'></div>")
+document.write("<div class='fakeimg' style='height:20px;'><a href='http://360fbb1a.nat123.fun/' target='_blank' >备用域名nat123</a></div>")
