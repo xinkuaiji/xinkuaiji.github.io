@@ -9,6 +9,6 @@ document.write("<li><a href='https://www.zybuluo.com/mdeditor'  target='_blank'>
 document.write("</ul>")
 document.write("<h3>教程手册：</h3>")
 document.write("<ul>")
-document.write("<li><a href='http://25599e7l23.zicp.vip/Course/Web_Course_Debian12.5.0/Web_Course_Debian12.5.0.pdf' target='_blank'>Web_Course_Debian12.5.0.pdf</a></li>")
-document.write("<li><a href='http://25599e7l23.zicp.vip/Course/Scratch3_Course/Scratch3_Course.pdf' target='_blank'>Scratch3_Course.pdf</a></li>")
+document.write("<li><a href='http://daz.unaux.com/Course/Web_Course_Debian12.5.0/Web_Course_Debian12.5.0.pdf' target='_blank'>Web_Course_Debian12.5.0.pdf</a></li>")
+document.write("<li><a href='http://daz.unaux.com/Course/Scratch3_Course/Scratch3_Course.pdf' target='_blank'>Scratch3_Course.pdf</a></li>")
 document.write("</ul>")
