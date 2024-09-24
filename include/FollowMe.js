@@ -5,5 +5,4 @@ document.write("<p><a href='http://25599e7l23.zicp.vip/wordpress/' target='_blan
 document.write("<p><a href='http://25599e7l23.zicp.vip/nextcloud/' target='_blank' >NextCloud</a></p>")
 document.write("<p><a href='http://tangh.gnway.cc/' target='_blank' >金万维：WebDav</a></p>")
 document.write("<p><a href='http://daz.unaux.com/' target='_blank' >免费空间：daz.unaux.com</a></p>")
-document.write("<p><a href='http://20.107.245.80/' target='_blank' >微软云Azure</a></p>")
 document.write("<div class='fakeimg' style='height:20px;'><a href='http://360fbb1a.nat123.fun/' target='_blank' >备用域名nat123</a></div>")
