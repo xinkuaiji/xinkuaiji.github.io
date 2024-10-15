@@ -4,5 +4,5 @@ document.write("<a href='https://xinkuaiji.github.io/acs.html'>课后服务</a>"
 document.write("<a href='https://xinkuaiji.github.io/pc.html'>编程竞赛</a>")
 document.write("<a href='https://xinkuaiji.github.io/aow.html'>作品展示</a>")
 document.write("<a href='https://xinkuaiji.github.io/id.html'>教学设计</a>")
-document.write("<a href='http://20.107.245.80/vfm/' target='_blank'>简易网盘</a>")
+document.write("<a href='https://255v99i723.oicp.vip/vfm/' target='_blank'>简易网盘</a>")
 document.write("<a href='https://xinkuaiji.github.io/minecraft.html' target='_blank' style='float:right'>我的世界</a>")
