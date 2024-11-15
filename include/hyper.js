@@ -1,6 +1,6 @@
 document.write("<h3>软件资源：</h3>")
 document.write("<ul>")
-document.write("<li><a href='https://xinkuaiji.github.io/it/%E6%8C%87%E6%B3%95%E7%BB%83%E4%B9%A0.exe' target='_blank'>指法练习.exe</a></li>")
+document.write("<li><a href='https://edu.ybccode.com/' target='_blank'>猿编程-校园</a></li>")
 document.write("<li><a href='https://official-package.wpscdn.cn/wps/download/WPS_Setup_17857.exe' target='_blank'>Wps办公软件</a></li>")
 document.write("<li><a href='https://www.mlxx313.com/' target='_blank'>重庆信息科技活动平台</a></li>")
 document.write("<li><a href='https://makecode.trafficmanager.cn/ghdl/2924dd3870b2530499eb3453c43da3c5/makecode-microbit-setup-win64.exe' target='_blank'>课后服务：MakeCode</a></li>")
