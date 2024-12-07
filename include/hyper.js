@@ -8,5 +8,5 @@ document.write("<li><a href='https://www.zybuluo.com/mdeditor'  target='_blank'>
 document.write("</ul>")
 document.write("<h3>教程手册：</h3>")
 document.write("<ul>")
-document.write("<li><a href='http://daz.unaux.com/Course/Web_Course_Debian12.5.0/Web_Course_Debian12.5.0.pdf' target='_blank'>Web_Course_Debian12.5.0.pdf</a></li>")
+document.write("<li><a href='https://xinkuaiji.github.io/pdf/Web_Course_Debian12.5.0.pdf' target='_blank'>Web_Course_Debian12.5.0.pdf</a></li>")
 document.write("</ul>")
