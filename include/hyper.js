@@ -1,7 +1,7 @@
 document.write("<h3>软件资源：</h3>")
 document.write("<ul>")
 document.write("<li><a href='https://edu.ybccode.com/' target='_blank'>猿编程-校园</a></li>")
-document.write("<li><a href='https://official-package.wpscdn.cn/wps/download/WPS_Setup_17857.exe' target='_blank'>Wps办公软件</a></li>")
+document.write("<li><a href='https://cg.ybccode.com/' target='_blank'>编程闯关训练</a></li>")
 document.write("<li><a href='https://www.mlxx313.com/' target='_blank'>重庆信息科技活动平台</a></li>")
 document.write("<li><a href='https://makecode.trafficmanager.cn/ghdl/2924dd3870b2530499eb3453c43da3c5/makecode-microbit-setup-win64.exe' target='_blank'>MakeCode</a></li>")
 document.write("<li><a href='https://www.zybuluo.com/mdeditor'  target='_blank'>在线画流程图</a></li>")
