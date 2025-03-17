@@ -1,4 +1,5 @@
 document.write("<h3>联系作者：</h3>")
 document.write("<p>邮箱：<a href='mailto:183328415@qq.com'>183328415@qq.com</a></p>")
 document.write("<p>电话：19302349125</p>")
+document.write("<p><a href='http://255v99i723.oicp.vip/'  target='_blank'>花生壳影射网站</a></p>")
 document.write("<div class='fakeimg' style='height:20px;'><a href='https://github.com/xinkuaiji/xinkuaiji.github.io' target='_blank' >网站源码</a></div>")
