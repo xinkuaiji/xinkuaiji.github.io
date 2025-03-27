@@ -1,6 +1,6 @@
 document.write("<a href='./index.html'>网站首页</a>")
 document.write("<a href='http://daz.unaux.com/it/it.php' target='_blank'>信息科技</a>")
-document.write("<a href='./acs.html'>课后服务</a>")
+document.write("<a href='http://daz.unaux.com/acs/'>课后服务</a>")
 document.write("<a href='./pc.html'>编程竞赛</a>")
 document.write("<a href='./id.html'>教学设计</a>")
 document.write("<a href='http://daz.unaux.com/memo/' target='_blank'>任务管理</a>")
