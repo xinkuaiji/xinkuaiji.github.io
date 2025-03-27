@@ -1,6 +1,7 @@
 document.write("<h3>联系作者：</h3>")
 document.write("<p>邮箱：<a href='mailto:183328415@qq.com'>183328415@qq.com</a></p>")
 document.write("<p>电话：19302349125</p>")
+document.write("<a href='http://103.56.114.141:8080' target='_blank'>在线编程</a>")
 document.write("<p><a href='http://255v99i723.oicp.vip/'  target='_blank'>花生壳测试vfm</a></p>")
 document.write("<p><a href='http://480fdabd.nat123.fun/'  target='_blank'>nat123测试node</a></p>")
 document.write("<div class='fakeimg' style='height:20px;'><a href='https://github.com/xinkuaiji/xinkuaiji.github.io' target='_blank' >网站源码</a></div>")
