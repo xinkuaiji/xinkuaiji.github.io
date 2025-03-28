@@ -1,5 +1,4 @@
 document.write("<li><a href='31.php'>三（1）班</a></li>")
-document.write("<li><a href='32.php'>三（2）班</a></li>")
 document.write("<li><a href='41.php'>四（1）班</a></li>")
 document.write("<li><a href='42.php'>四（2）班</a></li>")
 document.write("<li><a href='51.php'>五（1）班</a></li>")
