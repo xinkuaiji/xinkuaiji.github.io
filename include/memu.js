@@ -1,7 +1,7 @@
 document.write("<a href='https://xinkuaiji.github.io/'>网站首页</a>")
 document.write("<a href='http://daz.unaux.com/it/' target='_blank'>信息科技</a>")
 document.write("<a href='http://daz.unaux.com/acs/'>课后服务</a>")
-document.write("<a href='https://xinkuaiji.github.io/pc.html'>编程竞赛</a>")
+document.write("<a href='http://daz.unaux.com/pc/'>编程竞赛</a>")
 document.write("<a href='https://xinkuaiji.github.io/id.html'>教学设计</a>")
 document.write("<a href='http://daz.unaux.com/memo/' target='_blank'>任务管理</a>")
 document.write("<a href='http://10.144.192.4:8080' target='_blank'>校内编程</a>")
