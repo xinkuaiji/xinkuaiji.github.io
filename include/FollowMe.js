@@ -1,6 +1,6 @@
 document.write("<h3>联系作者：</h3>")
 document.write("<p>邮箱：<a href='mailto:183328415@qq.com'>183328415@qq.com</a></p>")
 document.write("<p>电话：19302349125</p>")
-document.write("<a href='http://103.56.114.141:8080' target='_blank'>在线编程</a>")
+document.write("<a href='http://103.56.114.141/wordpress' target='_blank'>wordpress</a>")
 document.write("<p><a href='http://103.56.114.141/nextcloud/'  target='_blank'>nextcloud</a></p>")
 document.write("<div class='fakeimg' style='height:20px;'><a href='https://github.com/xinkuaiji/xinkuaiji.github.io' target='_blank' >网站源码</a></div>")
