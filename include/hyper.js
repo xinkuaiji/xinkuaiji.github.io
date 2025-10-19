@@ -5,6 +5,7 @@ document.write("<li><a href='https://www.mlxx313.com/' target='_blank'>重庆信
 document.write("<li><a href='http://camp.deep-code.cn/' target='_blank'>三江编程马拉松</a></li>")
 document.write("<li><a href='https://www.zmrobo.com/' target='_blank'>中鸣机器人</a></li>")
 document.write("<li><a href='https://www.yuque.com/zmrobo/ofz1xb' target='_blank'>启智板函数说明</a></li>")
+document.write("<li><a href='https://www.ybccode.com/' target='_blank'>猿编程</a></li>")
 document.write("</ul>")
 document.write("<h3>教程手册：</h3>")
 document.write("<ul>")
