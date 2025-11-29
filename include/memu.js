@@ -3,5 +3,5 @@ document.write("<a href='http://103.56.114.141/it.php' target='_blank'>信息科
 document.write("<a href='http://103.56.114.141/acs.php'>课后服务</a>")
 document.write("<a href='http://103.56.114.141/pc.php'>编程竞赛</a>")
 document.write("<a href='https://xinkuaiji.github.io/id.html'>教学设计</a>")
-document.write("<a href='http://103.56.114.141/memo/' target='_blank'>任务管理</a>")
+document.write("<a href='http://103.56.114.141/memos/' target='_blank'>任务管理</a>")
 document.write("<a href='https://xinkuaiji.github.io/minecraft.html' target='_blank' style='float:right'>我的世界</a>")
